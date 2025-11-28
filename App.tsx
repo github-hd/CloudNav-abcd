@@ -37,7 +37,7 @@ import SettingsModal from './components/SettingsModal';
 
 // --- 配置项 ---
 // 项目核心仓库地址
-const GITHUB_REPO_URL = 'https://github.com/sese972010/CloudNav-';
+const GITHUB_REPO_URL = 'https://github.com/aabacada/CloudNav-abcd';
 
 const LOCAL_STORAGE_KEY = 'cloudnav_data_cache';
 const AUTH_KEY = 'cloudnav_auth_token';

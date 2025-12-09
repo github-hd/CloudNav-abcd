@@ -1,0 +1,25 @@
+version: "3.8"
+
+services:
+  cloudnav:
+    image: ghcr.io/github-hd/cloudnav-abcd:latest
+    container_name: cloudnav
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      # 访问密码（必填）
+      PASSWORD: "your_password_here"
+      # KV 数据存储路径
+      CLOUDNAV_KV_PATH: "/app/data"
+      # 端口配置
+      PORT: "3000"
+    volumes:
+      # 持久化数据存储
+      - ./data:/app/data
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:3000"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
